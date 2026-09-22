@@ -1,0 +1,871 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   LANDING PAGE STYLES - Inspired by Microsoft Excel for Web
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Variables ─────────────────────────────────────────────────────────────── */
+:root {
+  --excel-green: #00d97e;
+  --excel-dark-green: #00b868;
+  --excel-blue: #4f8ef7;
+  --excel-bg: #08101e;
+  --excel-bg-light: #0f1925;
+  --excel-text: #e2eaf5;
+  --excel-text-dim: #8b9fc7;
+}
+
+/* ── Landing Page Container ────────────────────────────────────────────────── */
+.landing-page {
+  min-height: 100vh;
+  background: var(--excel-bg);
+  color: var(--excel-text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   HERO SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79, 142, 247, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 142, 247, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--excel-green), transparent);
+  top: -200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--excel-blue), transparent);
+  bottom: -150px;
+  right: -150px;
+  animation-delay: 7s;
+}
+
+.orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #f04747, transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 14s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(50px, -50px); }
+  66% { transform: translate(-50px, 50px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(0, 217, 126, 0.1);
+  border: 1px solid rgba(0, 217, 126, 0.3);
+  border-radius: 50px;
+  color: var(--excel-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  animation: fade-in-up 0.8s ease-out 0.1s backwards;
+}
+
+.title-crypto {
+  color: var(--excel-text);
+  display: inline-block;
+}
+
+.title-hft {
+  color: var(--excel-green);
+  display: inline-block;
+  position: relative;
+}
+
+.title-hft::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, var(--excel-green), var(--excel-blue));
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.title-subtitle {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: var(--excel-text-dim);
+  font-weight: 500;
+  display: block;
+  margin-top: 15px;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--excel-text-dim);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  animation: fade-in-up 0.8s ease-out 0.2s backwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  animation: fade-in-up 0.8s ease-out 0.3s backwards;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, var(--excel-green), var(--excel-dark-green));
+  color: #081a10;
+  box-shadow: 0 8px 25px rgba(0, 217, 126, 0.35);
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 217, 126, 0.5);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: var(--excel-text);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.cta-secondary:hover {
+  border-color: var(--excel-blue);
+  background: rgba(79, 142, 247, 0.1);
+  transform: translateY(-3px);
+}
+
+.cta-large {
+  padding: 20px 40px;
+  font-size: 1.1rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fade-in-up 0.8s ease-out 0.4s backwards;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--excel-green);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--excel-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Hero Illustration ─────────────────────────────────────────────────────── */
+.hero-illustration {
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  animation: fade-in-up 0.8s ease-out 0.5s backwards;
+}
+
+.terminal-mockup {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(15, 25, 37, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(8, 16, 30, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #f04747; }
+.dot-yellow { background: #ffa500; }
+.dot-green { background: #00d97e; }
+
+.terminal-title {
+  font-size: 0.85rem;
+  color: var(--excel-text-dim);
+  font-weight: 500;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.terminal-line {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.prompt {
+  color: var(--excel-green);
+  font-weight: 700;
+}
+
+.command {
+  color: var(--excel-blue);
+  font-weight: 600;
+}
+
+.args {
+  color: var(--excel-text-dim);
+}
+
+.terminal-output {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-left: 24px;
+  color: var(--excel-text-dim);
+}
+
+.terminal-output.success {
+  color: var(--excel-green);
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background: var(--excel-green);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FEATURES SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.features-section {
+  padding: 120px 20px;
+  background: linear-gradient(180deg, transparent, rgba(0, 217, 126, 0.02), transparent);
+  position: relative;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--excel-text), var(--excel-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--excel-text-dim);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.feature-card {
+  background: rgba(15, 25, 37, 0.6);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 35px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--excel-green), var(--excel-blue));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 217, 126, 0.15);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--excel-text);
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: var(--excel-text-dim);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.feature-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ARCHITECTURE SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.architecture-section {
+  padding: 120px 20px;
+  background: rgba(8, 16, 30, 0.5);
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.architecture-card {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  background: rgba(15, 25, 37, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.architecture-card:hover {
+  background: rgba(15, 25, 37, 0.8);
+  border-color: var(--excel-blue);
+  transform: translateX(5px);
+}
+
+.arch-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(79, 142, 247, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arch-content {
+  flex: 1;
+}
+
+.arch-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--excel-text);
+  margin-bottom: 6px;
+}
+
+.arch-desc {
+  font-size: 0.9rem;
+  color: var(--excel-text-dim);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   BACKEND FEATURES SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.backend-features-section {
+  padding: 120px 20px;
+  background: linear-gradient(180deg, rgba(8, 16, 30, 0.8), rgba(15, 25, 37, 0.6));
+  position: relative;
+  z-index: 1;
+}
+
+.backend-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 28px;
+  margin-top: 60px;
+}
+
+.backend-feature-card {
+  background: rgba(15, 25, 37, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 36px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.backend-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 217, 126, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 217, 126, 0.15);
+  background: rgba(15, 25, 37, 0.95);
+}
+
+.backend-feature-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.backend-feature-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.backend-feature-card:hover .backend-feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.backend-feature-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--excel-text);
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+.backend-feature-desc {
+  font-size: 0.95rem;
+  color: var(--excel-text-dim);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.backend-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.backend-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--excel-text);
+  line-height: 1.5;
+}
+
+.backend-feature-list li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.backend-feature-list li span {
+  flex: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   TECH STACK SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.tech-section {
+  padding: 120px 20px;
+  background: linear-gradient(180deg, transparent, rgba(79, 142, 247, 0.02), transparent);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.tech-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px;
+  background: rgba(15, 25, 37, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.tech-badge:hover {
+  background: rgba(15, 25, 37, 0.8);
+  border-color: var(--excel-green);
+  transform: translateY(-5px);
+}
+
+.tech-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--excel-text);
+}
+
+.tech-category {
+  font-size: 0.8rem;
+  color: var(--excel-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   CTA SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.cta-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, rgba(0, 217, 126, 0.1), rgba(79, 142, 247, 0.1));
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 217, 126, 0.1), transparent 50%);
+  animation: rotate-gradient 20s linear infinite;
+}
+
+@keyframes rotate-gradient {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cta-container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-content {
+  background: rgba(8, 16, 30, 0.8);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(0, 217, 126, 0.3);
+  border-radius: 20px;
+  padding: 60px 40px;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--excel-green), var(--excel-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: var(--excel-text-dim);
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════════════════════════════════ */
+.landing-footer {
+  background: rgba(8, 16, 30, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 50px 20px 30px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--excel-text);
+}
+
+.footer-tagline {
+  color: var(--excel-text-dim);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 30px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-copyright {
+  color: var(--excel-text-dim);
+  font-size: 0.9rem;
+}
+
+.developer-name {
+  color: var(--excel-green);
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-link {
+  color: var(--excel-text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--excel-green);
+}
+
+.footer-separator {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ══════════════════════════════════════════════════════════════════════════ */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 20px;
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .features-grid,
+  .architecture-grid,
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-content {
+    padding: 40px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .title-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+}
