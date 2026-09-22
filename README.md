@@ -48,8 +48,8 @@ A professional-grade cryptocurrency high-frequency trading platform with ultra-l
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/CryptoHFT.git
-   cd CryptoHFT
+   git clone https://github.com/sakettt25/HFT-Project.git
+   cd HFT-Project
    ```
 
 2. **Configure Binance API** (optional for live data):
@@ -228,13 +228,14 @@ const WS_URL = 'ws://localhost:8080/ws/trading';
 
 ## 🤝 Support
 
-- **Issues**: https://github.com/yourusername/CryptoHFT/issues
-- **Discussions**: https://github.com/yourusername/CryptoHFT/discussions
+- **Issues**: https://github.com/sakettt25/HFT-Project/issues
+- **Discussions**: https://github.com/sakettt25/HFT-Project/discussions
 - **Email**: saketsaurav@example.com
 
 ## 👨‍💻 Developer
 
 **Saket Saurav**
+- GitHub: https://github.com/sakettt25
 - Platform architecture and implementation
 - High-frequency trading engine design
 - Real-time market data integration

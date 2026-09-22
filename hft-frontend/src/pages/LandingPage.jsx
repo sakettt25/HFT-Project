@@ -108,7 +108,7 @@ const LandingPage = ({ onEnterApp }) => {
               <span>Launch Trading Terminal</span>
               <ArrowRight size={20} />
             </button>
-            <button className="cta-button cta-secondary" onClick={() => window.open('https://github.com/yourusername/CryptoHFT', '_blank')}>
+            <button className="cta-button cta-secondary" onClick={() => window.open('https://github.com/sakettt25/HFT-Project', '_blank')}>
               <span>View Documentation</span>
               <GitBranch size={18} />
             </button>
@@ -417,11 +417,11 @@ const LandingPage = ({ onEnterApp }) => {
               <span className="developer-name">Saket Saurav</span>
             </p>
             <div className="footer-links">
-              <a href="#" onClick={(e) => { e.preventDefault(); window.open('https://github.com/yourusername/CryptoHFT/blob/main/README.md', '_blank'); }} className="footer-link">Documentation</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); window.open('https://github.com/sakettt25/HFT-Project/blob/main/README.md', '_blank'); }} className="footer-link">Documentation</a>
               <span className="footer-separator">•</span>
-              <a href="#" onClick={(e) => { e.preventDefault(); window.open('https://github.com/yourusername/CryptoHFT', '_blank'); }} className="footer-link">GitHub</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); window.open('https://github.com/sakettt25/HFT-Project', '_blank'); }} className="footer-link">GitHub</a>
               <span className="footer-separator">•</span>
-              <a href="#" onClick={(e) => { e.preventDefault(); window.open('https://github.com/yourusername/CryptoHFT/blob/main/LICENSE', '_blank'); }} className="footer-link">License</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); window.open('https://github.com/sakettt25/HFT-Project/blob/main/LICENSE', '_blank'); }} className="footer-link">License</a>
             </div>
           </div>
         </div>

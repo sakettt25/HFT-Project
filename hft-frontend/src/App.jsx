@@ -199,7 +199,7 @@ function App() {
                 href="#" 
                 onClick={(e) => { 
                   e.preventDefault(); 
-                  window.open('https://github.com/yourusername/CryptoHFT/blob/main/README.md', '_blank'); 
+                  window.open('https://github.com/sakettt25/HFT-Project/blob/main/README.md', '_blank'); 
                 }} 
                 className="footer-link"
               >
@@ -221,7 +221,7 @@ function App() {
                 href="#" 
                 onClick={(e) => { 
                   e.preventDefault(); 
-                  window.open('https://github.com/yourusername/CryptoHFT/issues', '_blank'); 
+                  window.open('https://github.com/sakettt25/HFT-Project/issues', '_blank'); 
                 }} 
                 className="footer-link"
               >
